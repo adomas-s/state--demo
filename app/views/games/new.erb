@@ -1,0 +1,6 @@
+<h2>New game</h2>
+<%= form_for Game.new, html: { "data-turbo" => false } do |f| %>
+  <%= f.label :passcode %>
+  <%= f.text_field :passcode %>
+  <%= f.submit %>
+<% end %>

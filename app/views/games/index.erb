@@ -1,0 +1,7 @@
+<h2>All games</h2>
+<ul>
+  <% @games.each do |game| %>
+    <li><a href="/games/<%= game.id %>">Game <%= game.id %></a></li>
+  <% end %>
+</ul>
+<a href="/games/new">Create new game</a>

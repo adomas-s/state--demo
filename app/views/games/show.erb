@@ -1,0 +1,19 @@
+<h2>Game <%= @game.id %></h2>
+
+<% if @attempts.any? %>
+  <div>Your previous attempts</div>
+  <ol>
+    <% @attempts.each do |attempt| %>
+      <li><%= attempt.value %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<div>Your next attempt:</div>
+<%= form_for [@game, Attempt.new], html: { "data-turbo" => false } do |f| %>
+  <%= f.label :value, "Your guess" %>
+  <%= f.text_field :value, autofocus: true %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<a href="/">Back to all games</a>
